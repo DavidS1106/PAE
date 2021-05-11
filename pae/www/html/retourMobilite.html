@@ -1,0 +1,106 @@
+<div id="retourMobilite" class="page" style="display: none">
+
+          <!-- ************************* NAVBAR PROF ***************************** -->
+
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark collapse navbar-collapse" name="prof-navbar">
+            <a class="navbar-brand"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+                <ul class = "navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a name="confirmerMobiliteProfNav"class="nav-link" title="confirmerMobiliteProf">Confirmer Mobilité</a>
+                    </li>
+                    <li class = "nav-item">
+                        <a name="demandeMobiliteCsvNav" class="nav-link" title="demandeMobiliteCsv">Demandes de Mobilités</a>
+                    </li>
+
+                    <li class = "nav-item">
+                        <a name="etatDocumentsProfsNav" class="nav-link" title="etatDocumentsProfs">Etat des Documents Profs</a>
+                    </li>
+    
+                    <li class = "nav-item">
+                        <a name="infosEtudiantsProfsNav" class="nav-link" title="infosEtudiantsProfs">Infos Etudiant (Prof)</a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a name="infosPartenairesNav" class="nav-link" title="infosPartenaires">Infos Partenaires</a>
+                    </li>
+                    
+                    <li class="nav-item active">
+                      <a name="retourMobiliteNav"class="nav-link" title="retourMobilite">Retour Mobilité</a>
+                    </li>
+               
+                    <li class = "nav-item">
+                        <a name="annulationProfesseurNav" class="nav-link" title="annulationProfesseur">Annulation mobilité(Prof)</a>
+                    </li>
+                     <li class="nav-item">
+                        <a name="voirInscritsNav" class="nav-link" title="voirInscrits">Liste des utilisateurs</a>
+                    </li>
+                     <li class="nav-item">
+                        <a name="rechercheProfNav" class="nav-link" title="rechercheProf">Recherche</a>
+                    </li>
+                    <li>
+                         <a class="nav-item btn btn-primary" name="disco-button-prof">Déconnexion</a>
+                    </li>
+                    <li>
+                        <h4 style="color: aqua" name="bienvenue"> <span></span></h4>
+                    </li>
+                </ul>
+            </nav>
+                    <!-- ************************* FIN NAVBAR PROF ***************************** -->
+
+  	
+  	  <div class="container">
+            <div class="row">
+            <div class="col-md-12">
+        
+        <h2>Confirmation de signature des documents au départ</h2>
+            </div>
+            </div>
+            <div class="row">
+            <div class="col-md-5"> 
+        <form id="etudiants" method="POST"></form>
+            <div class="select">
+            <p>Etudiant:
+                <select>
+                    <option>Aurélien Lemalfaisant</option>
+                    <option>Jule Lejuste</option>
+                </select>
+            </p>
+            </div>
+        <form id="retourMob" method="POST"></form>
+            <table>
+            <tbody>
+            <tr>
+                <td>Documents</td>
+                <td>Signé?</td>
+            </tr>
+            <tr>
+                    <td>Attestation de séjour</td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>Relevé de notes</td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>Rapport final</td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>Preuve de passage des tests linguistiques</td>
+                    <td><input type="checkbox"></td>
+                </tr>
+            </tbody>
+            </table>
+            
+            <div class="row">
+             <div class="envoi">
+            <input type="submit" value="Envoyer seconde demande de payement">
+            </div>
+            </div>
+        </div>
+       </div>
+      </div>
+  	</div>

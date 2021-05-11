@@ -1,0 +1,162 @@
+<div id="etatDocumentsProfs" class="page" style="display: none">
+
+          <!-- ************************* NAVBAR PROF ***************************** -->
+
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark collapse navbar-collapse" name="prof-navbar">
+        <a class="navbar-brand"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+            <ul class = "navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a name="confirmerMobiliteProfNav"class="nav-link" title="confirmerMobiliteProf">Confirmer Mobilité</a>
+                </li>
+                <li class = "nav-item">
+                    <a name="demandeMobiliteCsvNav" class="nav-link" title="demandeMobiliteCsv">Demandes de Mobilités</a>
+                </li>
+
+                <li class = "nav-item active">
+                    <a name="etatDocumentsProfsNav" class="nav-link" title="etatDocumentsProfs">Etat des Documents Profs</a>
+                </li>
+
+                <li class = "nav-item">
+                    <a name="infosEtudiantsProfsNav" class="nav-link" title="infosEtudiantsProfs">Infos Etudiant (Prof)</a>
+                </li>
+
+                <li class="nav-item">
+                    <a name="infosPartenairesNav" class="nav-link" title="infosPartenaires">Infos Partenaires</a>
+                </li>
+                
+                <li class="nav-item">
+                  <a name="retourMobiliteNav"class="nav-link" title="retourMobilite">Retour Mobilité</a>
+                </li>
+           
+                <li class = "nav-item ">
+                    <a name="annulationProfesseurNav" class="nav-link" title="annulationProfesseur">Annulation mobilité(Prof)</a>
+                </li>
+                 <li class="nav-item">
+                    <a name="voirInscritsNav" class="nav-link" title="voirInscrits">Liste des utilisateurs</a>
+                </li>
+                 <li class="nav-item">
+                    <a name="rechercheProfNav" class="nav-link" title="rechercheProf">Recherche</a>
+                </li>
+                <li>
+                     <a class="nav-item btn btn-primary" name="disco-button-prof">Déconnexion</a>
+                </li>
+                <li>
+                    <h4 style="color: aqua" name="bienvenue"> <span></span></h4>
+                </li>
+            </ul>
+        </nav>
+        <!-- ************************* FIN NAVBAR PROF ***************************** -->
+
+        
+        <div class="container">
+              <div class="row">
+              <div class="col-md-12">
+        <h2 style="text-align: center">Etat des documents</h2>
+         
+          Etudiants : <select name="etudiantsEtatDocuments" class="etudiantsEtatDocuments" id="etudiantsEtatDocuments">           
+          </select>
+          
+          <input type="button" value="Choisir" id="choisirEtudiantEtatDocument">
+          <input type="button" value="Modifier" id="modifierEtatDocuments">
+          <br>
+  
+      <div id="tabEtatDocuments">
+          <table>
+              <thead>
+              <tr>
+                   <th>Depart</th>
+                  <th>Etat</th>
+              </tr>
+                 
+              </thead>
+              <tbody id="body">
+                  <tr>
+                      <td>Contrat de bourse</td>
+                      <td><input type="checkbox" name="contrat_bourse" value="signe">signé</td>
+                  </tr>
+                  <tr>
+                      <td>Convention d'étude</td>
+                      <td><input type="checkbox" name="convention_etude" value="signe">signée</td>
+                  </tr>
+                  <tr>
+                      <td>Convention de stage</td>
+                      <td><input type="checkbox" name="convention_stage" value="signe">signée</td>
+                  </tr>
+                  <tr>
+                      <td>Charte de l'étudiant</td>
+                      <td><input type="checkbox" name="charte">signée</td>
+                  </tr>
+                  <tr>
+                      <td>Document d'engagement</td>
+                      <td><input type="checkbox" name="doc_engagement">signé</td>
+                  </tr>
+                  <tr>
+                      <td>Demande de paiement</td>
+                      <td><input type="checkbox" name="demande_1_paiement">effectuée</td>
+                  </tr>
+                  <tr>
+                      <td>Paiement</td>
+                      <td><input type="checkbox" name="paiement_1">payé</td>
+                  </tr>
+                  <tr>
+                      <td>Informations étudiant</td>
+                      <td><input type="checkbox" name="infos_etudiant">complétées</td>
+                  </tr>
+                  <tr>
+                      <td>Informations partenaire</td>
+                      <td><input type="checkbox" name="infos_partenaire">complétées</td>
+                  </tr>
+              </tbody>
+         </table>
+         
+         <input type="button" value="Envoyer première demande de paiement" id="demande_premier_paiement">
+  
+         <br>
+  
+         <table>
+              <thead>
+              <tr>
+                  <th>Retour</th>
+                  <th>Etat</th>
+              </tr>
+                  
+              </thead>
+              <tbody>
+                  <tr>
+                      <td>Attestation de séjour</td>
+                      <td><input type="checkbox" name="attestation">reçue</td>
+                  </tr>
+                  <tr>
+                      <td>Relevé de notes</td>
+                      <td><input type="checkbox" name="releve_notes">signé</td>
+                  </tr>
+                  <tr>
+                      <td>Certificat de stage</td>
+                      <td><input type="checkbox" name="certificat_stage">reçue</td>
+                  </tr>
+                  <tr>
+                      <td>Rapport finale</td>
+                      <td><input type="checkbox" name="rapport">reçue</td>
+                  </tr>
+                  <tr>
+                      <td>Demande de paiement</td>
+                      <td><input type="checkbox" name="demande_2_paiement">effectuée</td>
+                  </tr>
+                  <tr>
+                      <td>Paiement</td>
+                      <td><input type="checkbox" name="paiement_2">payé</td>
+                  </tr>
+              </tbody>
+         </table>
+         
+         <input type="button" value="Envoyer seconde demande de paiement" id="demande_second_paiement">
+         </div>
+            </div>
+        </div>
+        </div>
+        </div>
+
+      

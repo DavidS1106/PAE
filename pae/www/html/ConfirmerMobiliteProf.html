@@ -1,0 +1,92 @@
+<div id="confirmerMobiliteProf" class="page" style="display: none">
+
+     <!-- ************************* NAVBAR PROF ***************************** -->
+
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark collapse navbar-collapse" name="prof-navbar">
+        <a class="navbar-brand"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+            <ul class = "navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a name="confirmerMobiliteProfNav"class="nav-link" title="confirmerMobiliteProfx">Confirmer Mobilité</a>
+                </li>
+                <li class = "nav-item">
+                    <a name="demandeMobiliteCsvNav" class="nav-link" title="demandeMobiliteCsv">Demandes de Mobilités</a>
+                </li>
+
+                <li class = "nav-item">
+                    <a name="etatDocumentsProfsNav" class="nav-link" title="etatDocumentsProfs">Etat des Documents Profs</a>
+                </li>
+
+                <li class = "nav-item">
+                    <a name="infosEtudiantsProfsNav" class="nav-link" title="infosEtudiantsProfs">Infos Etudiant (Prof)</a>
+                </li>
+
+                <li class="nav-item">
+                    <a name="infosPartenairesNav" class="nav-link" title="infosPartenaires">Infos Partenaires</a>
+                </li>
+                
+                <li class="nav-item">
+                  <a name="retourMobiliteNav"class="nav-link" title="retourMobilite">Retour Mobilité</a>
+                </li>
+           
+                <li class = "nav-item ">
+                    <a name="annulationProfesseurNav" class="nav-link" title="annulationProfesseur">Annulation mobilité(Prof)</a>
+                </li>
+                 <li class="nav-item">
+                    <a name="voirInscritsNav" class="nav-link" title="voirInscrits">Liste des utilisateurs</a>
+                </li>
+                 <li class="nav-item">
+                    <a name="rechercheProfNav" class="nav-link" title="rechercheProf">Recherche</a>
+                </li>
+                <li>
+                     <a class="nav-item btn btn-primary" name="disco-button-prof">Déconnexion</a>
+                </li>
+                <li>
+                    <h4 style="color: aqua" name="bienvenue"> <span></span></h4>
+                </li>
+            </ul>
+        </nav>
+        <!-- ************************* FIN NAVBAR PROF ***************************** -->
+        
+    <div class="container">
+            <div class="row">
+            <div class="col-md-12">
+    <h2>Confirmation de la mobilité des étudiants</h2>
+         <p>Selectionner un etudiants : <select id="listeEtudiants" size="1"> </select></p>
+    <div class="col-lg-4 col-lg-offset-3">
+    <div id="partenariatExistant">
+        <h3>Partenariat existant:</h3><br>
+        <table>
+                <thead>
+            <tr>
+                <th>Etudiant</th>
+                <th>Partenaire</th>
+                <th>Confirmation</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+            
+        </table>
+            </div>
+        </div>
+        </div>
+    </div>
+        <div id="partenariatNonExistant">
+            <h3>Partenariat non-existant:</h3><br>
+        <table>
+        <thead>
+            <tr>
+                <th>Etudiant</th>
+                <th>Partenaire</th>
+                <th>Confirmation</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        </div>
+    </div>
+</div>

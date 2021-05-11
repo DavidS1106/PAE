@@ -1,0 +1,62 @@
+<div id ="authentification" class="page" style="display: block">
+    <div class="container">
+          <div class="row">
+          <div class="col-md-12">
+    <h2 class="text-center">Bienvenue sur le site de mobilité étudiante</h2><br>
+    <div class="alert" style="display:none" id="error_login">
+         <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+         Veuillez vérifier votre adresse email ou votre mot de passe
+      </div>
+  <div class="alert" style="display:none" id="error_inscription">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';" >&times;</span>
+     L'inscription a échoué
+   </div>
+  <div class="alert" style="display:none" id="empty_field">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';" >&times;</span>
+     Champ(s) vide !
+   </div> 
+  <div class="alert" style="display:none" id="ok_inscription">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';" >&times;</span>
+     Inscription réussie !
+   </div>     
+   
+   <div class="alert" style="display:none" id="error_email_inscription">
+                     <span class="closebtn" onclick="this.parentElement.style.display='none';" >&times;</span>
+                      Erreur format email 
+                   </div>
+
+   <!-- *********************** CONNEXION ********************** -->
+  <div class="row">
+        <div class="col" id="connection">
+              <div class="form-group col-md-3">
+                    <!-- <span style="color: aqua" id="dataNotif"></span>
+                    <span style="color: aqua" id="emailNotif"></span>
+                    <span style="color: aqua" id="mdpNotif"></span> -->
+                    <p id="dataNotif"></p>
+                    <p id="emailNotif"></p>
+                    <p id="mdpNotif"></p>
+          <h5>Se connecter:</h5>
+            Email: <input type="text" id="email"><br>
+            Mot de passe: <input type="password" id="mdp"><br><br>
+            <input type="button" value="Se connecter" id="login">
+          </div>
+        </div>
+
+        <!-- *********************** INSCRIPTION ********************** -->
+        <div class="col">
+              <div class="form-group col-md-3">
+          <h5>Pas encore inscrit ?</h5>
+          <h5>Crée ton compte:</h5>
+            Nom: <input type="text" id="nom"><br>
+            Prenom: <input type="text" id="prenom"><br>
+            Pseudo: <input type="text" id="pseudo"><br>
+            Email: <input type="text" id="email_inscription"><br>
+            Mot de passe: <input type="password" id="password"><br><br>
+             <input type="button" value="S'inscrire" id="inscription">
+            </div>
+          </div>
+             </div>
+    </div>
+ </div>
+    </div>
+ </div>

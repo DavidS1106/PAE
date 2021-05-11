@@ -1,0 +1,66 @@
+<div id="annulationEtudiant" class="page" style="display: none">
+		
+	 <!-- ************************* NAVBAR ETUDIANT ***************************** -->
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark collapse navbar-collapse" name="etudiant-navbar">
+            <a class="navbar-brand"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a name="choixMobiliteNav" class="nav-link" title="choixMobilite">Choix Mobilité</a>
+                    </li>
+                    <li class="nav-item">
+                        <a name="confirmerMobiliteNav"class="nav-link" title="confirmerMobilite">Confirmer Mobilité</a>
+                    </li>
+                    <li class="nav-item">
+                        <a name="etatDocumentsEtudiantNav" class="nav-link" title="etatDocumentsEtudiant">Etat des Documents Etudiants</a>
+                    </li>
+                    <li class="nav-item">
+                        <a name="infosEtudiantsNav" class="nav-link" title="infosEtudiants">Infos Etudiant</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a name="annulationEtudiantNav" class="nav-link" title="annulationEtudiant">Annulation mobilité(Etud)</a>
+                    </li>
+                    <li class="nav-item">
+                        <a name="rechercheEtudiantNav" class="nav-link" title="recherche">Recherche</a>
+                    </li>
+                    <li>
+                        <a class="nav-item btn btn-primary" name="disco-button-etudiant">Déconnexion</a>
+                    </li>
+                    <li>
+                        <h4 style="color: aqua"  name="bienvenue"> <span></span></h4>
+                    </li>
+                </ul>
+            </nav>
+    
+     <!-- ************************* FIN NAVBAR ETUDIANT ***************************** -->
+	
+
+
+
+	<div class="container">
+			  <div class="row">
+			  <div class="col-md-12">
+			<h2>Annulation de sa demande de mobilité</h2> 
+		  <div class="alert" style="display:none" id="alert">
+			   <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>   			
+			  Veuillez entrer une raison
+		  </div>
+		  
+		  <div class="alert alert-secondary" style="display:none" id="alert1">
+			  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+			  Envoie de la raison effectuée !
+		  </div>
+		  <div class="alert alert-secondary" style="display:none" id="alert2">
+			  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+			  Envoie de la raison non effetué !
+		  </div>
+		   <h3>Veuillez indiquer la raison de votre annulation</h3>
+		   <textarea id="raison" rows="5" cols="50"></textarea>
+		   <br>
+		   <input type="button" value="Soumettre" id="annulation_etudiant">
+			  </div>
+		</div>
+	</div>
+</div>

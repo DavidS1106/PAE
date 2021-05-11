@@ -1,0 +1,156 @@
+<div id="recherche" class="page" style="display: none">
+       
+    	 <!-- ************************* NAVBAR ETUDIANT ***************************** -->
+         <nav class="navbar navbar-expand-lg navbar-dark bg-dark collapse navbar-collapse" name="etudiant-navbar">
+                <a class="navbar-brand"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a name="choixMobiliteNav" class="nav-link" title="choixMobilite">Choix Mobilité</a>
+                        </li>
+                        <li class="nav-item">
+                            <a name="confirmerMobiliteNav"class="nav-link" title="confirmerMobilite">Confirmer Mobilité</a>
+                        </li>
+                        <li class="nav-item">
+                            <a name="etatDocumentsEtudiantNav" class="nav-link" title="etatDocumentsEtudiant">Etat des Documents Etudiants</a>
+                        </li>
+                        <li class="nav-item">
+                            <a name="infosEtudiantsNav" class="nav-link" title="infosEtudiants">Infos Etudiant</a>
+                        </li>
+                        <li class="nav-item">
+                            <a name="annulationEtudiantNav" class="nav-link" title="annulationEtudiant">Annulation mobilité(Etud)</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a name="rechercheEtudiantNav" class="nav-link" title="recherche">Recherche</a>
+                        </li>
+                        <li>
+                            <a class="nav-item btn btn-primary" name="disco-button-etudiant">Déconnexion</a>
+                        </li>
+                        <li>
+                            <h4 style="color: aqua"  name="bienvenue"> <span></span></h4>
+                        </li>
+                    </ul>
+                </nav>
+        
+         <!-- ************************* FIN NAVBAR ETUDIANT ***************************** -->
+    
+    <div class="container">
+              <div class="row">
+              <div class="col-md-12">
+                  <h2>Recherche</h2>
+                 
+                  <form class="form_partenaire" method="POST">
+                     <h5>Rechercher un partenaire:</h5>
+             
+                     <p> Nom :
+                          <input type="text" class="nom_partenaire">
+                      </p>
+                      <p> Pays :
+                              <input type="text" class="pays_partenaire">
+                      </p>
+                      <p> Ville :
+                              <input type="text" class="ville_partenaire">
+                      </p>
+                      <input type="button" value="Rechercher partenaire" class="recherche_partenaire">
+                  </form>
+                  <br/>
+                  <form class="form_etudiant" method="POST">
+                          <h5>    Rechercher un étudiant:</h5>
+                          <p> Nom :
+                               <input type="text" class="nom_etudiant">
+                           </p>
+                           <p> Prénom :
+                                   <input type="text" class="prenom_etudiant">
+                           </p>
+                           <input type="button" value="Rechercher étudiant" class="recherche_etudiant">
+                  </form>
+                  <br/>
+                  <form class="form_mobilite" method="POST">
+                          <h5> Rechercher une mobilité:</h5>
+                          <p> Année académique :
+                              <input type="text" class="annee_mobilite">
+                          </p>
+                          <p> Etat de la mobilité :
+                              <select class="etat_mobilite" size="1">
+                                  <option value="E">créée</option>
+                                  <option value="EP">en préparation</option>
+                                  <option value="AP">à payer</option>
+                                  <option value="APS">à payer solde</option>
+                              </select> 	
+                          </p>
+                          <input type="button" value="Rechercher mobilité" class="recherche_mobilite">
+                  </form>
+                  <br/>
+                  
+                  <table class="tab_partenaire">
+                      <thead>
+                          <th>Nom légal</th>
+                          <th>Nom affaire</th>
+                          <th>Nom complet</th>
+                          <th>Pays</th>
+                          <th>Région</th>
+                          <th>Ville</th>
+                          <th>Adresse</th>
+                          <th>Code Postal</th>
+                          <th>Code</th>
+                          <th>Type d'organisation</th>
+                          <th>Département</th>
+                          <th>Nb employés</th>
+                          <th>Email</th>
+                          <th>Site web</th>
+                          <th>Téléphone</th>
+                      </thead>
+                      <tbody class="resultat_partenaire">
+                          
+                      </tbody>
+                  </table>
+                  
+                  <table class="tab_etudiant">
+                      <thead>
+                          <th>Nom</th>
+                          <th>Prénom</th>
+                          <th>Email</th>
+                          <th>Date de naissance</th>
+                          <th>Nationalité</th>
+                          <th>Adresse</th>
+                          <th>Code postal</th>
+                          <th>Sexe</th>
+                          <th>Statut</th>
+                          <th>Téléphone</th>
+                          <th>Département</th>
+                          <th>Nb années d'études</th>
+                          <th>Numéro compte bancaire</th>
+                          <th>Titulaire du compte</th>
+                          <th>Banque</th>
+                          <th>Code BIC</th>
+                      </thead>
+                      <tbody class="resultat_etudiant">
+                          
+                      </tbody>
+                  </table>
+                  
+                  <table class="tab_mobilite">
+                      <thead>
+                          <th>Email étudiant</th>
+                          <th>Nom</th>
+                          <th>Prénom</th>
+                          <th>Nom partenaire</th>
+                          <th>Pays</th>
+                          <th>Type de mobilité</th>
+                          <th>Code</th>
+                          <th>N° ordre</th>
+                          <th>Année académique</th>
+                          <th>Quadrimestre</th>
+                          <th>Date d'introduction</th>
+                      </thead>
+                      <tbody class="resultat_mobilite">
+                          
+                      </tbody>
+                  </table>
+  
+          </div>
+          </div>
+        </div>
+        </div>

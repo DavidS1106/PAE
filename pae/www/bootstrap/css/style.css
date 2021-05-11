@@ -1,0 +1,81 @@
+html {
+	min-height: 100%;
+	position: relative;
+}
+input {
+    background-color: whitesmoke;
+    /* beige; */
+}
+
+ul {
+	text-align : center;
+}
+th {
+  background-color: grey;
+  color: aqua;
+}
+
+table {
+  border-collapse: collapse;
+   width: 100%;
+  
+}
+
+/* .navbar .authentification .creerMobilite .confirmerMobilite .confirmerMobiliteProf
+.annulationEtudiant .annulationProfesseur .demandeMobiliteCsv .etatDocuments
+.infosEtudiants .infosEtudiantsProfs .infosPartenaires .retourMobilite .recherche{
+	display : none;
+} */
+
+
+table th, td {
+  padding: 15px;
+  border: 1px solid black;
+}
+
+.creerMobilite{
+	display : none;
+}
+
+/*.navbar{
+	display : block;
+}
+*/
+.submit {
+  background-color: grey;
+  color: aqua;
+}
+    body {
+      padding-top: 50px;
+       margin: 0 0 100px;
+   
+    	padding: 25px;
+     
+    }
+    
+    .starter-template {
+      padding: 40px 15px;
+      text-align: center;
+    }
+    /* The alert message box */
+  	
+  	.alert {
+      padding: 20px;
+   	  background-color: #f44336; /* Red */
+      color: white;
+      margin-bottom: 15px;
+  	}
+  	
+  	/* The close button */
+  	.closebtn {
+      margin-left: 15px;
+      color: white;
+      font-weight: bold;
+      float: right;
+      font-size: 22px;
+      line-height: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    /* Ici *

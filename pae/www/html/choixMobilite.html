@@ -1,0 +1,176 @@
+<div id="choixMobilite" class="page" style="display: none">
+
+            <!-- ************************* NAVBAR ETUDIANT ***************************** -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark collapse navbar-collapse" name="etudiant-navbar">
+        <a class="navbar-brand"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a name="choixMobiliteNav" class="nav-link" title="choixMobilite">Choix Mobilité</a>
+                </li>
+                <li class="nav-item">
+                    <a name="confirmerMobiliteNav"class="nav-link" title="confirmerMobilite">Confirmer Mobilité</a>
+                </li>
+                <li class="nav-item">
+                    <a name="etatDocumentsEtudiantNav" class="nav-link" title="etatDocumentsEtudiant">Etat des Documents Etudiants</a>
+                </li>
+                <li class="nav-item">
+                    <a name="infosEtudiantsNav" class="nav-link" title="infosEtudiants">Infos Etudiant</a>
+                </li>
+                <li class="nav-item">
+                    <a name="annulationEtudiantNav" class="nav-link" title="annulationEtudiant">Annulation mobilité(Etud)</a>
+                </li>
+                <li class="nav-item">
+                    <a name="rechercheEtudiantNav" class="nav-link" title="recherche">Recherche</a>
+                </li>
+                <li>
+                    <a class="nav-item btn btn-primary" name="disco-button-etudiant">Deconnexion</a>
+                </li>
+                <li>
+                    <h4 style="color: aqua"  name="bienvenue"> <span></span></h4>
+                </li>
+            </ul>
+        </nav>
+
+         <!-- ************************* FIN NAVBAR ETUDIANT ***************************** -->
+
+        <div class="container">
+              <div class="row">
+              <div class="col-md-12">
+      <h2>Déclaration choix de mobilité</h2>
+      <br>
+      
+      <div class="alert" style="display:none" id="success_mob">
+                     <span class="closebtn" onclick="this.parentElement.style.display='none';" >&times;</span>
+                      Mobilité
+                   </div> 
+	  <div class="alert" style="display:none" id="failed_mob">
+                     <span class="closebtn" onclick="this.parentElement.style.display='none';" >&times;</span>
+                      
+                   </div> 
+	  <div class="alert" style="display:none" id="error_ordre_num">
+                     <span class="closebtn" onclick="this.parentElement.style.display='none';" >&times;</span>
+                      Erreur format numérique 
+                   </div> 
+	  <div class="alert" style="display:none" id="error_ordre_neg">
+                     <span class="closebtn" onclick="this.parentElement.style.display='none';" >&times;</span>
+                      Erreur valeur négative 
+                   </div> 
+      
+      <div id="nouveau">
+          <h3>Ajouter une mobilité avec un partenaire existant :</h3><br>
+          <table>
+              <tr>
+                  <th>Ordre</th> 
+                  <th>Partenaire</th>
+                  <th>Pays</th>
+                  <th>Quadrimestre</th>
+              </tr>
+              <tr>
+                  <th><input type="number" id="preference" value=0></th>
+                  <th><select name="partenaire" id="select_partenaires"></select></th>
+                  <th><select name="pays" id="select_pays_creer_mobi"></select></th>
+                  <th><select id="quadrimestre">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                      </select>
+                  </th>
+              </tr>   
+          </table>
+          <input type="button" id="ajouterMobilité" value="Ajouter">
+          
+      </div>
+      
+      <div id="nouveauComplet">
+          <h3>Ajouter une mobilité avec un nouveau partenaire :</h3><br>
+          <table>
+              <tr>
+                  <th>Ordre</th> 
+                  <th>Programme</th>
+                  <th>SMS / SMP</th>
+                  <th>Partenaire</th>
+                  <th>Pays</th>
+                  <th>Quadrimestre</th>
+              </tr>
+              <tr>
+                  <th><input type="number" id="preferenceComplet" value=0></th>
+                  <th><select name="programme" id="select_programmeComplet">
+                          <option value="Erasmus+">Erasmus+</option>
+                          <option value="Erabel">Erabel</option>
+                             <option value="Fame">Fame</option>
+                      </select>
+                  </th>
+                   <th><select name="code" id="select_codeComplet">
+                          <option value="SMS">SMS</option>
+                          <option value="SMP">SMP</option>
+                      </select>
+                  </th>
+                  <th>
+                      <input type="text" id="partenaireComplet">
+                      
+                  </th>
+                  <th><select name="pays" id="select_pays_creer_mobiComplet">
+                          <option value="Non-defini" selected="selected">Non-defini</option>
+                      </select>
+                  </th>
+                  <th><select id="quadrimestreComplet">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                      </select>
+                  </th>
+              </tr>   
+          </table>
+          <input type="button" id="ajouterMobilitéComplet" value="Ajouter">
+          
+      </div>
+      <br>
+      <div id="ancien">
+              <div class="alert" style="display:none" id="alertModifError">
+                      <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>   			
+                     Modification échouée ! (Attention vérifier bien que le programme correpond bien à un partenaire et que le partenaire soit dans le bon pays !) 
+              </div>
+              
+              <h3>Mobilité ajoutée :</h3><br>
+              <table>
+                  <thead>
+                      <tr>
+                          <th>Ordre</th>
+                          <th >Programme</th> 
+                          <th>SMS/SMP</th>
+                          <th>Partenaire</th>
+                          <th>Pays</th>
+                          <th>Quadrimestre</th>
+                          <th>Modification</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          
+                      </tr>
+                  </tbody>
+                  
+              </table>
+          </div>
+          <div id="confirmation">
+              <h3>Confirmation d'un partenaire non existant:</h3>
+              <table>
+                  <thead>
+                      <tr>
+                          <th>Pays</th>
+                          <th>Partenaire</th>
+                          <th>Confirmation</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+             </div>
+      </div>
+        </div>	
+        </div>

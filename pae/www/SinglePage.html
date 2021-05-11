@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="bootstrap/css/style.css" media="all">
+      <title>SinglePage</title>
+  </head>
+  <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark collapse navbar-collapse" id="etudiant-navbar">
+        <a class="navbar-brand"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+            <ul class="navbar-nav mr-auto">
+        		<li class="nav-item">
+                    <a id="creerMobiliteNav"class="nav-link" title="creerMobilite">Creer Mobilité</a>
+                </li>
+                <li class="nav-item">
+                    <a id="confirmerMobiliteNav"class="nav-link" title="confirmerMobilite">Confirmer Mobilité</a>
+                </li>
+                
+                <li class = "nav-item">
+                    <a id="etatDocumentsEtudiantNav" class="nav-link" title="etatDocumentsEtudiant">Etat des Documents</a>
+                </li>
+                
+                <li class = "nav-item">
+                    <a id="infosEtudiantsNav" class="nav-link" title="infosEtudiants">Infos Etudiant</a>
+                </li>
+                
+                <li class = "nav-item">
+                    <a id="annulationEtudiantNav" class="nav-link" title="annulationEtudiant">Annulation mobilité(Etud)</a>
+                </li>
+                      <li class="nav-item">
+                    <a id="rechercheNavEtudiant" class="nav-link" title="recherche">Recherche</a>
+                </li>
+                <li>
+                  	 <a class="nav-item btn btn-primary" id="disco-button-etudiant">Déconnexion</a>
+                </li>
+                <li>
+                    <h4 style="color: aqua"  id="bienvenue"> <span></span></h4>
+                </li>
+               
+               </ul>
+       	</nav>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark collapse navbar-collapse" id="prof-navbar">
+        <a class="navbar-brand"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+            	<ul class = "navbar-nav mr-auto">
+            	<li class = "nav-item">
+                    <a id="demandeMobiliteCsvNav" class="nav-link" title="demandeMobiliteCsv">Demandes de Mobilités</a>
+                </li>
+                <li class="nav-item">
+                    <a id="confirmerMobiliteNavProf"class="nav-link" title="confirmerMobilite">Confirmer Mobilité</a>
+                </li>
+                <li class = "nav-item">
+                    <a id="etatDocumentsNav" class="nav-link" title="etatDocuments">Etat des Documents</a>
+                </li>
+
+                <li class = "nav-item">
+                    <a id="infosEtudiantsProfsNav" class="nav-link" title="infosEtudiantsProfs">Infos Etudiant (Prof)</a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a id="infosPartenairesNav" class="nav-link" title="infosPartenaires">Infos Partenaires</a>
+                </li>
+                
+                <li class="nav-item">
+                  <a id="retourMobiliteNav"class="nav-link" title="retourMobilite">Retour Mobilité</a>
+                </li>
+           
+				<li class = "nav-item">
+                    <a id="annulationProfesseurNav" class="nav-link" title="annulationProfesseur">Annulation mobilité(Prof)</a>
+                </li>
+                 <li class="nav-item">
+                    <a id="voirInscritsNav" class="nav-link" title="voirInscrits">Liste des utilisateurs</a>
+                </li>
+                 <li class="nav-item">
+                    <a id="rechercheNavProf" class="nav-link" title="recherche">Recherche</a>
+                </li>
+                <li>
+                  	 <a class="nav-item btn btn-primary" id="disco-button-prof">Déconnexion</a>
+                </li>
+                <li>
+                    <h4 style="color: aqua" id="bienvenue"> <span></span></h4>
+                </li>
+                </ul>
+            </nav>
+            
+    <div id ="authentification" class="page">
+            <div class="container">
+                  <div class="row">
+                  <div class="col-md-12">
+            <h2 class="text-center">Bienvenue sur le site de mobilité étudiante</h2><br>
+            <div class="alert" style="display:none" id="alert1">
+                 <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                 Veuillez vérifier votre adresse email et votre mot de passe
+              </div>
+      
+            <div class="alert" style="display:none" id="alert2">
+             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                 Veuillez entrer un mot de passe
+            </div>
+      
+            <div class="alert" style="display:none" id="alert3">
+             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                       Veuillez entrer une adresse email
+          </div>
+          <div class="alert" style="display:none" id="alert4">
+              <span class="closebtn" onclick="this.parentElement.style.display='none';" >&times;</span>
+             L'inscription a échoué. Champs vide ou incorrect 
+           </div>  
+      
+          
+
+          <div class="row">
+                <div class="col" id="connection">
+                      <div class="form-group col-md-3">
+                            <p id="dataNotif"></p>
+                            <p id="emailNotif"></p>
+                            <p id="mdpNotif"></p>
+                  <h5>Se connecter:</h5>
+                    Email: <input type="text" id="email"><br>
+                    Mot de passe: <input type="password" id="mdp"><br><br>
+                    <input type="button" value="Se connecter" id="login">
+                  </div>
+                </div>
+                <div class="col">
+                      <div class="form-group col-md-3">
+                  <h5>Pas encore inscrit ?</h5>
+                  <h5>Crée ton compte:</h5>
+                    Nom: <input type="text" id="nom"><br>
+                    Prenom: <input type="text" id="prenom"><br>
+                    Pseudo: <input type="text" id="pseudo"><br>
+                    Email: <input type="text" id="email_inscription"><br>
+                    Mot de passe: <input type="password" id="password"><br><br>
+                     <input type="button" value="S'inscrire" id="inscription">
+                    </div>
+                  </div>
+                     </div>
+            </div>
+         </div>
+            </div>
+         </div>
+    
+  	<div id="creerMobilite" class="page">
+  	<div class="container">
+            <div class="row">
+            <div class="col-md-12">
+    <h2>Déclaration choix de mobilité</h2>
+	<br>
+    <div id="nouveau">
+        <h3>Ajouter une mobilité avec un partenaire existant :</h3><br>
+        <table>
+            <tr>
+                <th>Ordre</th> 
+                <th>Partenaire</th>
+                <th>Pays</th>
+                <th>Quadrimestre</th>
+            </tr>
+            <tr>
+                <th><input type="number" id="preference" value=0></th>
+                <th><select name="partenaire" id="select_partenaires"></select></th>
+                <th><select name="pays" id="select_pays_creer_mobi"></select></th>
+                <th><select id="quadrimestre">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </th>
+            </tr>   
+        </table>
+        <input type="button" id="ajouterMobilité" value="Ajouter">
+        
+    </div>
+    
+    <div id="nouveauComplet">
+        <h3>Ajouter une mobilité avec un nouveau partenaire :</h3><br>
+        <table>
+            <tr>
+                <th>Ordre</th> 
+                <th>Programme</th>
+                <th>SMS / SMP</th>
+                <th>Partenaire</th>
+                <th>Pays</th>
+                <th>Quadrimestre</th>
+            </tr>
+            <tr>
+                <th><input type="number" id="preferenceComplet" value=0></th>
+                <th><select name="programme" id="select_programmeComplet">
+                		<option value="Erasmus+">Erasmus+</option>
+                        <option value="Erabel">Erabel</option>
+                       	<option value="Fame">Fame</option>
+                	</select>
+                </th>
+                 <th><select name="code" id="select_codeComplet">
+                		<option value="SMS">SMS</option>
+                        <option value="SMP">SMP</option>
+                	</select>
+                </th>
+                <th>
+                	<input type="text" id="partenaireComplet">
+                	
+                </th>
+                <th><select name="pays" id="select_pays_creer_mobiComplet">
+                		<option value="Non-défini" selected="selected">Non-défini</option>
+                	</select>
+                </th>
+                <th><select id="quadrimestreComplet">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                </th>
+            </tr>   
+        </table>
+        <input type="button" id="ajouterMobilitéComplet" value="Ajouter">
+        
+    </div>
+    <br>
+    <div id="ancien">
+            <div class="alert" style="display:none" id="alertModifError">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>   			
+                   Modification échouée ! (Attention vérifier bien que le programme correpond bien à un partenaire et que le partenaire soit dans le bon pays !) 
+            </div>
+            
+            <h3>Mobilité ajoutée :</h3><br>
+            <table>
+            	<thead>
+					<tr>
+						<th>Ordre</th>
+						<th>Programme</th> 
+						<th>SMS/SMP</th>
+						<th>Partenaire</th>
+						<th>Pays</th>
+                        <th>Quadrimestre</th>
+                        <th>Modification</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						
+					</tr>
+				</tbody>
+				
+			</table>
+        </div>
+        <div id="confirmation">
+            <h3>Confirmation d'un partenaire non existant:</h3>
+            <table>
+            	<thead>
+					<tr>
+						<th>Pays</th>
+                        <th>Partenaire</th>
+                        <th>Confirmation</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						
+					</tr>
+				</tbody>
+			</table>
+        </div>
+           </div>
+    </div>
+  	</div>	
+  	</div>	
+   <div id="confirmerMobilite" class="page"> 
+      <div class="container">
+            <div class="row">
+            <div class="col-md-12">
+      <h2>Confirmation de la mobilité des étudiants</h2>
+      <div class="col-lg-4 col-lg-offset-3">
+      <div id="partenariatExistant">
+          <h3>Partenariat existant:</h3><br>
+          <table>
+               <thead>
+              <tr>
+                  <th>Etudiant</th>
+                  <th>Partenaire</th>
+                  <th>Confirmation</th>
+              </tr>
+              </thead>
+              <tbody>
+              </tbody>
+              
+          </table>
+             </div>
+  		</div>
+  		</div>
+      </div>
+      	<div id="partenariatNonExistant">
+              <h3>Partenariat non-existant:</h3><br>
+          <table>
+          <thead>
+              <tr>
+                  <th>Etudiant</th>
+                  <th>Partenaire</th>
+                  <th>Confirmation</th>
+              </tr>
+              </thead>
+              <tbody>
+              </tbody>
+          </table>
+      	</div>
+      </div>
+     </div>
+  
+  
+  	<div id="annulationEtudiant" class="page">
+  	<div class="container">
+            <div class="row">
+            <div class="col-md-12">
+  		<h2>Annulation de sa demande de mobilité</h2> 
+	    <div class="alert" style="display:none" id="alert">
+ 			<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>   			
+			Veuillez entrer une raison
+		</div>
+		
+		<div class="alert alert-secondary" style="display:none" id="alert1">
+			<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+			Envoie de la raison effectuée !
+		</div>
+		<div class="alert alert-secondary" style="display:none" id="alert2">
+			<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+			Envoie de la raison non effetué !
+		</div>
+	     <h3>Veuillez indiquer la raison de votre annulation</h3>
+	     <textarea id="raison" rows="5" cols="50"></textarea>
+	     <br>
+	     <input type="button" value="Soumettre" id="annulation_etudiant">
+	        </div>
+  	</div>
+  	</div>
+  	</div>
+  	
+  	<div id="annulationProfesseur" class="page">
+  	 <div class="container">
+            <div class="row">
+            <div class="col-md-12">
+  	 <h2 style="text-align: center">Annulation de la demande de mobilité d'un étudiant</h2>
+       
+        <h3>Veuillez indiquer la raison de votre annulation</h3>
+        
+        
+        Etudiants : <select name="etudiantsAnnulation" class="etudiantsAnnulation" id="etudiantsAnnulation">           
+        </select>
+        <input type="button" value="Choisir" id="choisirEtudiantAnnulation">
+
+       <table id="tabAnnulationEtatDocuments">
+            <thead>
+	            <tr>
+	             <th>Documents</th>
+	             <th>Etat</th>
+	            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Contrat de bourse</td>
+                    <td><p name="contrat_de_bourse"></p></td>
+                </tr>
+                <tr>
+                    <td>Convention d'études</td>
+                    <td><p name="convention_d_etude"></p></td>
+                </tr>
+                <tr>
+                    <td>Charte de l'étudiant</td>
+                    <td><p name="charte_etudiant"></p></td>
+                </tr>
+                <tr>
+                    <td>Document d'engagement</td>
+                    <td><p name="document_engagement"></p></td>
+                </tr>
+                <tr>
+                    <td>Paiement de la bourse</td>
+                    <td><p name="paiement_bourse"></p></td>
+                </tr>
+            </tbody>
+       </table>
+       <br>
+       <p id="select_raisons">Raisons : <select name="raisons" size="1" id="raisons">
+        </select></p>
+        <br><br>
+
+       <input type="button" value="Annuler mobilité" id="annulation_professeur">
+          </div>
+          </div>
+  		</div>
+  		</div>
+  	
+  	<div id="demandeMobiliteCsv" class="page">
+  	   <div class="container">
+            <div class="row">
+            <div class="col-md-12">
+  	   <h2 style="text-align: center">Liste des demandes de mobilités introduites</h2>
+       
+       <table id="tableBalises">
+            <thead>
+                <tr>
+                    <th>Etudiant</th>
+                    <th>Date d'introduction</th>
+                    <th>Ordre</th>
+                    <th>Type de mobilité</th>
+                    <th>SMS/SMP</th>
+                    <th>Partenaire</th>
+                    <th>Quadrimestre</th>
+                    <th>Département</th>
+                    <th>Pays</th>
+                </tr>
+            </thead>
+            <tbody  id="contenu_tab">
+               
+            </tbody>
+       </table>
+       <br>
+        <form>
+       <input type="submit" class="submit" name="exporter" value="exporter en .csv" id="submit_csv">
+       </form>
+          </div>
+  	</div>
+  	</div>
+  	</div>
+  	
+  	<div id="etatDocuments" class="page">
+  	<div class="container">
+            <div class="row">
+            <div class="col-md-12">
+  	<h2 style="text-align: center">Etat des documents</h2>
+       
+        Etudiants : <select name="etudiantsEtatDocuments" class="etudiantsEtatDocuments" id="etudiantsEtatDocuments">           
+        </select>
+        
+        <input type="button" value="Choisir" id="choisirEtudiantEtatDocument">
+        <input type="button" value="Modifier" id="modifierEtatDocuments">
+        <br>
+
+	<div id="tabEtatDocuments">
+        <table>
+            <thead>
+            <tr>
+             	<th>Depart</th>
+                <th>Etat</th>
+            </tr>
+               
+            </thead>
+            <tbody id="body">
+                <tr>
+                    <td>Contrat de bourse</td>
+                    <td><input type="checkbox" name="contrat_bourse" value="signe">signé</td>
+                </tr>
+                <tr>
+                    <td>Convention d'étude</td>
+                    <td><input type="checkbox" name="convention_etude" value="signe">signée</td>
+                </tr>
+                <tr>
+                    <td>Convention de stage</td>
+                    <td><input type="checkbox" name="convention_stage" value="signe">signée</td>
+                </tr>
+                <tr>
+                    <td>Charte de l'étudiant</td>
+                    <td><input type="checkbox" name="charte">signée</td>
+                </tr>
+                <tr>
+                    <td>Document d'engagement</td>
+                    <td><input type="checkbox" name="doc_engagement">signé</td>
+                </tr>
+                <tr>
+                    <td>Demande de paiement</td>
+                    <td><input type="checkbox" name="demande_1_paiement">effectuée</td>
+                </tr>
+                <tr>
+                    <td>Paiement</td>
+                    <td><input type="checkbox" name="paiement_1">payé</td>
+                </tr>
+                <tr>
+                    <td>Informations étudiant</td>
+                    <td><input type="checkbox" name="infos_etudiant">complétées</td>
+                </tr>
+                <tr>
+                    <td>Informations partenaire</td>
+                    <td><input type="checkbox" name="infos_partenaire">complétées</td>
+                </tr>
+            </tbody>
+       </table>
+       
+       <input type="button" value="Envoyer première demande de paiement" id="demande_premier_paiement">
+
+       <br>
+
+       <table>
+            <thead>
+            <tr>
+            	<th>Retour</th>
+                <th>Etat</th>
+            </tr>
+                
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Attestation de séjour</td>
+                    <td><input type="checkbox" name="attestation">reçue</td>
+                </tr>
+                <tr>
+                    <td>Relevé de notes</td>
+                    <td><input type="checkbox" name="releve_notes">signé</td>
+                </tr>
+                <tr>
+                    <td>Certificat de stage</td>
+                    <td><input type="checkbox" name="certificat_stage">reçue</td>
+                </tr>
+                <tr>
+                    <td>Rapport finale</td>
+                    <td><input type="checkbox" name="rapport">reçue</td>
+                </tr>
+                <tr>
+                    <td>Demande de paiement</td>
+                    <td><input type="checkbox" name="demande_2_paiement">effectuée</td>
+                </tr>
+                <tr>
+                    <td>Paiement</td>
+                    <td><input type="checkbox" name="paiement_2">payé</td>
+                </tr>
+            </tbody>
+       </table>
+       
+       <input type="button" value="Envoyer seconde demande de paiement" id="demande_second_paiement">
+       </div>
+          </div>
+  	</div>
+  	</div>
+  	</div>
+  	
+  	<div id="etatDocumentsEtudiant" class="page">
+  	<div class="container">
+            <div class="row">
+            <div class="col-md-12">
+  	<h2 style="text-align: center">Etat des documents</h2>
+
+	<div id="tabEtatDocumentsEtudiant">
+        <table>
+            <thead>
+            <tr>
+             	<th>Depart</th>
+                <th>Etat</th>
+            </tr>
+               
+            </thead>
+            <tbody id="body">
+                <tr>
+                    <td>Contrat de bourse</td>
+                    <td><p name="contrat_bourse"></td>
+                </tr>
+                <tr>
+                    <td>Convention d'étude</td>
+                    <td><p name="convention_etude"></td>
+                </tr>
+                <tr>
+                    <td>Convention de stage</td>
+                    <td><p name="convention_stage"></td>
+                </tr>
+                <tr>
+                    <td>Charte de l'étudiant</td>
+                    <td><p name="charte"></td>
+                </tr>
+                <tr>
+                    <td>Document d'engagement</td>
+                    <td><p name="doc_engagement"></td>
+                </tr>
+                <tr>
+                    <td>Demande de paiement</td>
+                    <td><p name="demande_1_paiement"></td>
+                </tr>
+                <tr>
+                    <td>Paiement</td>
+                    <td><p name="paiement_1"></td>
+                </tr>
+                <tr>
+                    <td>Informations étudiant</td>
+                    <td><p name="infos_etudiant"></td>
+                </tr>
+                <tr>
+                    <td>Informations partenaire</td>
+                    <td><p name="infos_partenaire"></td>
+                </tr>
+            </tbody>
+       </table>
+       
+       <br>
+
+       <table>
+            <thead>
+            <tr>
+            	<th>Retour</th>
+                <th>Etat</th>
+            </tr>
+                
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Attestation de séjour</td>
+                    <td><p name="attestation"></td>
+                </tr>
+                <tr>
+                    <td>Relevé de notes</td>
+                    <td><p name="releve_notes"></td>
+                </tr>
+                <tr>
+                    <td>Certificat de stage</td>
+                    <td><p name="certificat_stage"></td>
+                </tr>
+                <tr>
+                    <td>Rapport finale</td>
+                    <td><p name="rapport_final"></td>
+                </tr>
+                <tr>
+                    <td>Demande de paiement</td>
+                    <td><p name="demande_2_paiement"></td>
+                </tr>
+                <tr>
+                    <td>Paiement</td>
+                    <td><p name="paiement_2"></td>
+                </tr>
+            </tbody>
+       </table>
+       </div>
+          </div>
+  	</div>
+  	</div>
+  	</div>
+      
+    <!-- Infos Etudiants  -->
+    <div id="infosEtudiants" class="page">
+            <div class="alert" style="display: none" id="alert5">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';" >&times;</span>
+                    Champs incorrect ou vide !
+            </div> 
+    	<div class="container">
+             <div class="row">
+                <div class="col-md-12">
+                    
+                    <I><h2 style="text-align: center">Informations sur l'étudiant</h2></I>
+                    <fieldset><legend>Informations</legend>
+
+                        <form id="formulaire_etudiant" method="POST">
+                            <p>Nationalité : <select name="pays" id="select_pays_etudiant"> </select></p>
+                            
+                         <p>Statut : 
+                             M <input type="radio" name="statut_etudiant" value="M" id="statut_m">
+                             Mme <input type="radio" name="statut_etudiant" value="Mme" id="statut_mme">
+                             Mlle <input type="radio" name="statut_etudiant" value="Mlle" id="statut_mlle"> 
+                         </p>
+                  
+                        <p><span> Nom : <input type="text" name="nom" id="nom"></span></p>
+                        <p><span> Prénom : <input type="text" name="prenom"></span></p>
+                        Date de naissance : <input type="date" name="dateNaissance" id="etudiant_date"><p>
+                        <p><input type="text" name="nationalite" id="natio_etudiant"></p>
+                        <p><span> Adresse : <input type="text" name="adresse"></span>
+                        Numéro : <input type="number" name="numero"></p>
+                        <p>Code postal : <input type="text" name="codePostal"></p>
+                        <p>Téléphone : <input type="tel" name="tel"></p>
+                        <p>Email (école) : <input type="email" name="email"></p>
+                        <p> Sexe : M <input type="radio" name="sexe_etudiant" value="M" id="sex_m"> F <input type="radio" name="sexe_etudiant" value="F" id="sex_f"></p>
+                        <p>Nombre d'années d'études réussies dans l'enseignement supérieur : <input type="text" name="nbrAnneesEtudes"></p>
+                        <p> Département : <input type="text" name="departement"></p>
+                        <p> Numéro compte bancaire pour la bourse (IBAN) : <input type="text" name="numCompteBancaire"></p>
+                        <p>Code BIC : <input type="text" name="codeBic"></p>
+                        <p>Titulaire du compte (si différent de celui du participant) : <input type="text" name="titulaireCompte"></p>
+                        <p>Nom de la banque : <input type="text" name="nomBanque"></p>            	
+                    </form>
+                    
+                     <button id="sauvegarder">Sauvegarder</button>
+                     
+                    </fieldset>
+                </div>
+  	        </div>
+          </div>
+  	</div>
+      
+        <div id="infosEtudiantsProfs" class="page">
+                <div class="alert" style="display: none" id="alert5">
+                        <span class="closebtn" onclick="this.parentElement.style.display='none';" >&times;</span>
+                        Champs incorrect ou vide !
+                </div> 
+  	<div class="container">
+            <div class="row">
+            <div class="col-md-12">
+  	 <h2 style="text-align: center">Informations sur l'étudiant</h2>
+        <fieldset><legend>Informations</legend>
+                        
+            <form id="formulaire_infos" method="POST">
+                
+                <p>Etudiants : <select id="liste_etudiants" size="1"> </select></p>
+                    
+                <p>Nationalité : <select name="pays" id="select_pays_etudiant_prof"> </select></p>
+
+                <p>Statut : 
+                        M <input type="radio" name="statut_etudiant_prof" value="M" id="statut_m_prof">
+                        Mme <input type="radio" name="statut_etudiant_prof" value="Mme" id="statut_mme_prof">
+                        Mlle <input type="radio" name="statut_etudiant_prof" value="Mlle" id="statut_mlle_prof"> 
+                </p>
+               <p>Nom : <input type="text" name="nom" id="nom"></p>
+               <p>Prénom : <input type="text" name="prenom"></p>
+               <p>Date de naissance : <input type="date" name="dateNaissance" id="etudiant_date_prof"></p>
+               <!-- <p><input type="text" name="nationalite" id="natio_etudiant"></p> -->
+               <p><input type="text" name="nationalite" style="display: none" id="natio_etudiant_prof"></p>
+               <p>Adresse : <input type="text" name="adresse" id="adresse"></p>
+               <p>Numéro : <input type="text" name="numero" id="numero"></p>
+               <p>Code postal : <input type="text" name="codePostal" id="codePostal"></p>
+               <p>Téléphone : <input type="text" name="tel" id="tel"></p>
+               <p>Email (école) : <input type="email" name="email" id="email"></p>
+               <p> Sexe : M <input type="radio" name="sexe_etudiant_prof" value="M" id="sex_m_prof"> F <input type="radio" name="sexe_etudiant_prof" value="F" id="sex_f_prof"></p>
+               <p>Nombre d'années d'études réussies dans l'enseignement supérieur : <input type="text" name="nbrAnneesEtudes" id="nbrAnneesEtudes"></p>
+               <p> Département : <input type="text" name="departement" id="departement"></p>
+               <p> Numéro compte bancaire pour la bourse (IBAN) : <input type="text" name="numCompteBancaire" id="numCompteBancaire"></p>
+               <p>Code BIC : <input type="text" name="codeBic" id="codeBic"></p>
+               <p>Titulaire du compte (si différent de celui du participant) : <input type="text" name="titulaireCompte" id="titulaireCompte"></p>
+               <p>Nom de la banque : <input type="text" name="nomBanque" id="nomBanque"></p>            	
+           </form>
+                <button id="sauvegarder_infos">Sauvegarder</button>
+            </fieldset>
+           </div>
+  	    </div>
+  	</div>
+    </div>
+      
+    <!-- Infos Partenaires  -->
+  	<div id="infosPartenaires" class="page">
+  	<div class="container">
+            <div class="row">
+            <div class="col-md-12">
+  		<h2 style="text-align: center">Informations sur le partenaire</h2>
+        <fieldset><legend>Informations</legend>
+            <br>
+            <form id="form_partenaire" method="POST">
+                              
+                <p>Partenaire : <select id="liste_partenaires" size="1"> </select></p>
+                <p>Nom légal : <input type="text" name="nomLegal"></p>
+                <p>Nom d'affaires : <input type="text" name="nomAffaire"><p>
+                <p>Nom complet : <input type="text" name="nomComplet"></p>
+                <p>Type d'organisation : TPE <input type="radio" name="type_organisation" value="TPE" id="type_tpe"> PME <input type="radio" name="type_organisation" value="PME" id="type_pme"> ETI <input type="radio" name="type_organisation" value="ETI" id="type_eti"> TGE <input type="radio" name="type_organisation" value="TGE" id="type_tge"> </p>
+                <p>Nb employés : <input type="number" name="nbEmploye"></p>
+                <p>Adresse : <input type="text" name="adresse"></p>
+                <p>Pays : <input type="text" name="pays"></p>
+                <p>Région : <input type="text" sname="region"></p>
+                <p>Code postal: <input type="text" name="codePostal"></p>
+                <p> Ville : <input type="text" name="ville"></p>
+                <p> E-mail : <input type="email" name="email"></p>
+                <p>Site Web : <input type="text" name="siteWeb"></p>
+                <p>Téléphone : <input type="tel" name="tel"></p>
+                <p>Code : <input type="text" name="code"></p>
+            </form>
+            <button id="sauvegarder_part">Sauvegarder</button>
+        </fieldset>
+           </div>
+  	</div>
+  	</div>
+  	</div>
+  	
+  	<div id="retourMobilite" class="page">
+  	
+  	  <div class="container">
+            <div class="row">
+            <div class="col-md-12">
+        
+        <h2>Confirmation de signature des documents au départ</h2>
+            </div>
+            </div>
+            <div class="row">
+            <div class="col-md-5"> 
+        <form id="etudiants" method="POST"></form>
+            <div class="select">
+            <p>Etudiant:
+                <select>
+                    <option>Aurélien Lemalfaisant</option>
+                    <option>Jule Lejuste</option>
+                </select>
+            </p>
+            </div>
+        <form id="retourMob" method="POST"></form>
+            <table>
+            <tbody>
+            <tr>
+                <td>Documents</td>
+                <td>Signé?</td>
+            </tr>
+            <tr>
+                    <td>Attestation de séjour</td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>Relevé de notes</td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>Rapport final</td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td>Preuve de passage des tests linguistiques</td>
+                    <td><input type="checkbox"></td>
+                </tr>
+            </tbody>
+            </table>
+            
+            <div class="row">
+             <div class="envoi">
+            <input type="submit" value="Envoyer seconde demande de payement">
+            </div>
+            </div>
+        </div>
+       </div>
+      </div>
+  	</div>
+  	
+  	<div id="recherche" class="page">
+  	<div class="container">
+            <div class="row">
+            <div class="col-md-12">
+                <h2>Recherche</h2>
+               
+                <form id="form_partenaire" method="POST">
+                   <h5>Rechercher un partenaire:</h5>
+           
+                   <p> Nom :
+                        <input type="text" id="nom_partenaire">
+                    </p>
+                    <p> Pays :
+                            <input type="text" id="pays_partenaire">
+                    </p>
+                    <p> Ville :
+                            <input type="text" id="ville_partenaire">
+                    </p>
+                    <input type="button" value="Rechercher partenaire" id="recherche_partenaire">
+                </form>
+                <br/>
+                <form id="form_etudiant" method="POST">
+                        <h5>    Rechercher un étudiant:</h5>
+                        <p> Nom :
+                             <input type="text" id="nom_etudiant">
+                         </p>
+                         <p> Prénom :
+                                 <input type="text" id="prenom_etudiant">
+                         </p>
+                         <input type="button" value="Rechercher étudiant" id="recherche_etudiant">
+                </form>
+                <br/>
+                <form id="form_mobilite" method="POST">
+                        <h5> Rechercher une mobilité:</h5>
+                        <p> Année académique :
+                        	<input type="text" id="annee_mobilite">
+                        </p>
+                        <p> Etat de la mobilité :
+                        	<select id="etat_mobilite" size="1">
+                        		<option value="">Veuillez sélectionner un état</option>
+                        		<option value="E">créée</option>
+                        		<option value="EP">en préparation</option>
+                        		<option value="AP">à payer</option>
+                        		<option value="APS">à payer solde</option>
+                        	</select> 	
+                        </p>
+                        <input type="button" value="Rechercher mobilité" id="recherche_mobilite">
+                </form>
+                <br/>
+                
+                <div class="alert" style="display:none" id="no_result">
+              		<span class="closebtn" onclick="this.parentElement.style.display='none';" >&times;</span>
+             		Pas de résultat !
+           		</div>
+           		
+           		<div class="alert" style="display:none" id="empty_input">
+ 					<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>   			
+					Champs vide !
+				</div>
+                
+                <table id="tab_partenaire">
+                	<thead>
+                		<th>Nom légal</th>
+                		<th>Nom affaire</th>
+                		<th>Nom complet</th>
+                		<th>Pays</th>
+                		<th>Région</th>
+                		<th>Ville</th>
+                		<th>Adresse</th>
+                		<th>Code Postal</th>
+                		<th>Code</th>
+                		<th>Type d'organisation</th>
+                		<th>Département</th>
+                		<th>Nb employés</th>
+                		<th>Email</th>
+                		<th>Site web</th>
+                		<th>Téléphone</th>
+                	</thead>
+                	<tbody id="resultat_partenaire">
+                		
+                	</tbody>
+                </table>
+                
+                <table id="tab_etudiant">
+                	<thead>
+                		<th>Nom</th>
+                		<th>Prénom</th>
+                		<th>Email</th>
+                		<th>Date de naissance</th>
+                		<th>Nationalité</th>
+                		<th>Adresse</th>
+                		<th>Code postal</th>
+                		<th>Sexe</th>
+                		<th>Statut</th>
+                		<th>Téléphone</th>
+                		<th>Département</th>
+                		<th>Nb années d'études</th>
+                		<th>Numéro compte bancaire</th>
+                		<th>Titulaire du compte</th>
+                		<th>Banque</th>
+                		<th>Code BIC</th>
+                	</thead>
+                	<tbody id="resultat_etudiant">
+                		
+                	</tbody>
+                </table>
+                
+                <table id="tab_mobilite">
+                	<thead>
+                		<th>Email étudiant</th>
+                		<th>Nom</th>
+                		<th>Prénom</th>
+                		<th>Nom partenaire</th>
+                		<th>Pays</th>
+                		<th>Type de mobilité</th>
+                		<th>Code</th>
+                		<th>N° ordre</th>
+                		<th>Année académique</th>
+                		<th>Quadrimestre</th>
+                		<th>Date d'introduction</th>
+                	</thead>
+                	<tbody id="resultat_mobilite">
+                		
+                	</tbody>
+                </table>
+
+        </div>
+        </div>
+  	</div>
+  	</div>
+  	
+  	<div id="voirInscrits" class="page">
+  	   <div class="container">
+            <div class="row">
+            <div class="col-md-12">
+  	   <h2 style="text-align: center">Liste des utilisateurs</h2>
+       
+       <table id="tableInscrits">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Mail</th>
+                </tr>
+            </thead>
+            <tbody  id="tabInscritsContenu">
+               
+            </tbody>
+       </table>
+          </div>
+  	</div>
+  	</div>
+  	</div>
+  	
+  	<script src="jquery.js"></script>
+    <script src="script-test.js"></script>
+    <script src="authentification.js"></script>
+    <script src="annulationEtudiant.js"></script>
+    <script src="annulationProfesseur.js"></script>
+    <script src="etatDocumentsEtudiant.js"></script>
+    <script src="etatDocumentsProfesseur.js"></script>
+    <script src="inscription.js"></script>
+    <script src="infosEtudiant.js"></script>
+    <script src="infosEtudiantProfesseur.js"></script>
+    <script src="infosPartenaire.js"></script>
+    <script src="login.js"></script>
+    <script src="logout.js"></script>
+    <script src="mobilite.js"></script>
+    <script src="recherche.js"></script>
+  </body>
+</html>

@@ -1,0 +1,112 @@
+ <!-- Infos Etudiants  -->
+ <div id="infosEtudiants" class="page" style="display: none">
+
+     
+       <!-- ************************* NAVBAR ETUDIANT ***************************** -->
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark collapse navbar-collapse" name="etudiant-navbar">
+            <a class="navbar-brand"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a name="choixMobiliteNav" class="nav-link" title="choixMobilite">Choix Mobilité</a>
+                    </li>
+                    <li class="nav-item">
+                        <a name="confirmerMobiliteNav"class="nav-link" title="confirmerMobilite">Confirmer Mobilité</a>
+                    </li>
+                    <li class = "nav-item">
+                        <a name="etatDocumentsEtudiantNav" class="nav-link" title="etatDocumentsEtudiant">Etat des Documents Etudiants</a>
+                    </li>
+                    <li class = "nav-item active">
+                        <a name="infosEtudiantsNav" class="nav-link" title="infosEtudiants">Infos Etudiant</a>
+                    </li>
+                    <li class = "nav-item">
+                        <a name="annulationEtudiantNav" class="nav-link" title="annulationEtudiant">Annulation mobilité(Etud)</a>
+                    </li>
+                    <li class="nav-item">
+                        <a name="rechercheEtudiantNav" class="nav-link" title="recherche">Recherche</a>
+                    </li>
+                    <li>
+                        <a class="nav-item btn btn-primary" name="disco-button-etudiant">Déconnexion</a>
+                    </li>
+                    <li>
+                        <h4 style="color: aqua"  name="bienvenue"> <span></span></h4>
+                    </li>
+                </ul>
+            </nav>
+    
+     <!-- ************************* FIN NAVBAR ETUDIANT ***************************** -->
+
+    <div class="container">
+         <div class="row">
+            <div class="col-md-12">
+                
+                <I><h2 style="text-align: center">Informations sur l'étudiant</h2></I>
+                
+                <div class="alert" style="display:none" id="error_save_etud">
+                     <span class="closebtn" onclick="this.parentElement.style.display='none';" >&times;</span>
+                      Opération échouée !
+                   </div> 
+                   
+                <div class="alert" style="display:none" id="success_save_etud">
+                     <span class="closebtn" onclick="this.parentElement.style.display='none';" >&times;</span>
+                      Opération réussie !
+                   </div> 
+                
+                <div class="alert" style="display:none" id="error_nb_etud">
+                     <span class="closebtn" onclick="this.parentElement.style.display='none';" >&times;</span>
+                      Erreur format numérique 
+                   </div> 
+                   
+                <div class="alert" style="display:none" id="error_tel">
+                     <span class="closebtn" onclick="this.parentElement.style.display='none';" >&times;</span>
+                      Erreur format téléphone
+                   </div> 
+                
+                <div class="alert" style="display:none" id="error_compte">
+                     <span class="closebtn" onclick="this.parentElement.style.display='none';" >&times;</span>
+                      Erreur format compte bancaire
+                   </div> 
+                
+               	<div class="alert" style="display:none" id="error_code">
+                     <span class="closebtn" onclick="this.parentElement.style.display='none';" >&times;</span>
+                      Erreur format code BIC
+                   </div> 
+
+                <fieldset><legend>Informations</legend>
+
+                    <form id="formulaire_etudiant" method="POST">
+                        <p>Nationalité : <select name="pays" id="select_pays_etudiant"> </select></p>
+                        
+                     <p>Statut : 
+                         M <input type="radio" name="statut_etudiant" value="M" id="statut_m">
+                         Mme <input type="radio" name="statut_etudiant" value="Mme" id="statut_mme">
+                         Mlle <input type="radio" name="statut_etudiant" value="Mlle" id="statut_mlle"> 
+                     </p>
+              
+                    <p><span> Nom : <input type="text" name="nom" id="nom"></span></p>
+                    <p><span> Prénom : <input type="text" name="prenom"></span></p>
+                    Date de naissance : <input type="date" name="dateNaissance" id="etudiant_date"><p>
+                    <p><input type="text" name="nationalite" id="natio_etudiant"></p>
+                    <p><span> Adresse : <input type="text" name="adresse"></span>
+                    Numéro : <input type="number" name="numero"></p>
+                    <p>Code postal : <input type="text" name="codePostal"></p>
+                    <p>Téléphone : <input type="text" name="tel"></p>
+                    <p>Email (école) : <input type="email" name="email"></p>
+                    <p> Sexe : M <input type="radio" name="sexe_etudiant" value="M" id="sex_m"> F <input type="radio" name="sexe_etudiant" value="F" id="sex_f"></p>
+                    <p>Nombre d'années d'études réussies dans l'enseignement supérieur : <input type="number" name="nbrAnneesEtudes"></p>
+                    <p> Département : Informatique <input type="text" name="departement" style="display: none"></p>
+                    <p> Numéro compte bancaire pour la bourse (IBAN) : <input type="text" name="numCompteBancaire"></p>
+                    <p>Code BIC : <input type="text" name="codeBic"></p>
+                    <p>Titulaire du compte (si différent de celui du participant) : <input type="text" name="titulaireCompte"></p>
+                    <p>Nom de la banque : <input type="text" name="nomBanque"></p>            	
+                </form>
+                
+                 <button id="sauvegarder">Sauvegarder</button>
+                 
+                </fieldset>
+            </div>
+          </div>
+      </div>
+  </div>

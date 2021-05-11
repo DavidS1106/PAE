@@ -1,0 +1,100 @@
+ <!-- Infos Partenaires  -->
+ <div id="infosPartenaires" class="page" style="display: none">
+
+          <!-- ************************* NAVBAR PROF ***************************** -->
+
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark collapse navbar-collapse" name="prof-navbar">
+            <a class="navbar-brand"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+                <ul class = "navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a name="confirmerMobiliteProfNav"class="nav-link" title="confirmerMobiliteProf">Confirmer Mobilité</a>
+                    </li>
+                    <li class = "nav-item">
+                        <a name="demandeMobiliteCsvNav" class="nav-link" title="demandeMobiliteCsv">Demandes de Mobilités</a>
+                    </li>
+
+                    <li class = "nav-item">
+                        <a name="etatDocumentsProfsNav" class="nav-link" title="etatDocumentsProfs">Etat des Documents Profs</a>
+                    </li>
+    
+                    <li class = "nav-item">
+                        <a name="infosEtudiantsProfsNav" class="nav-link" title="infosEtudiantsProfs">Infos Etudiant (Prof)</a>
+                    </li>
+    
+                    <li class="nav-item active">
+                        <a name="infosPartenairesNav" class="nav-link" title="infosPartenaires">Infos Partenaires</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                      <a name="retourMobiliteNav"class="nav-link" title="retourMobilite">Retour Mobilité</a>
+                    </li>
+               
+                    <li class = "nav-item">
+                        <a name="annulationProfesseurNav" class="nav-link" title="annulationProfesseur">Annulation mobilité(Prof)</a>
+                    </li>
+                     <li class="nav-item">
+                        <a name="voirInscritsNav" class="nav-link" title="voirInscrits">Liste des utilisateurs</a>
+                    </li>
+                     <li class="nav-item">
+                        <a name="rechercheProfNav" class="nav-link" title="rechercheProf">Recherche</a>
+                    </li>
+                    <li>
+                         <a class="nav-item btn btn-primary" name="disco-button-prof">Déconnexion</a>
+                    </li>
+                    <li>
+                        <h4 style="color: aqua" name="bienvenue"> <span></span></h4>
+                    </li>
+                </ul>
+            </nav>
+                    <!-- ************************* FIN NAVBAR PROF ***************************** -->
+
+
+        <div class="container">
+              <div class="row">
+              <div class="col-md-12">
+            <h2 style="text-align: center">Informations sur le partenaire</h2>
+            
+            <div class="alert" style="display:none" id="operation_succeeded">
+      <span class="closebtn" onclick="this.parentElement.style.display='none';" >&times;</span>
+     Sauvegarde réussie !
+   </div>  
+   
+   <div class="alert" style="display:none" id="error_email">
+                     <span class="closebtn" onclick="this.parentElement.style.display='none';" >&times;</span>
+                      Erreur format email 
+                   </div>
+<div class="alert" style="display:none" id="error_nb">
+                     <span class="closebtn" onclick="this.parentElement.style.display='none';" >&times;</span>
+                      Erreur format numérique 
+                   </div> 
+            
+          <fieldset><legend>Informations</legend>
+              <br>
+              <form id="form_partenaire" method="POST">         
+                  <p>Partenaire : <select id="liste_partenaires" size="1"> </select></p>
+                  <p>Pays : <select name="pays" id="select_pays_partenaire"> </select></p>
+                  <p>Nom légal : <input type="text" name="nomLegal"></p>
+                  <p>Nom d'affaires : <input type="text" name="nomAffaire"><p>
+                  <p>Nom complet : <input type="text" name="nomComplet"></p>
+                  <p>Type d'organisation : TPE <input type="radio" name="type_organisation" value="TPE" id="type_tpe"> PME <input type="radio" name="type_organisation" value="PME" id="type_pme"> ETI <input type="radio" name="type_organisation" value="ETI" id="type_eti"> TGE <input type="radio" name="type_organisation" value="TGE" id="type_tge"> </p>
+                  <p>Nb employés : <input type="number" name="nbEmploye"></p>
+                  <p>Adresse : <input type="text" name="adresse"></p>
+                  <p><input type="text" name="pays" id="pays_part" style="display: none"></p>
+                  <p>Région : <input type="text" name="region"></p>
+                  <p>Département : <input type="text" name="departement"></p>
+                  <p>Code postal: <input type="text" name="codePostal"></p>
+                  <p> Ville : <input type="text" name="ville"></p>
+                  <p> E-mail : <input type="email" name="email"></p>
+                  <p>Site Web : <input type="text" name="siteWeb"></p>
+                  <p>Téléphone : <input type="tel" name="tel"></p>
+                  <p>Code : <input type="text" name="code"></p>
+              </form>
+              <button id="sauvegarder_part">Sauvegarder</button>
+          </fieldset>
+             </div>
+        </div>
+        </div>
+        </div>

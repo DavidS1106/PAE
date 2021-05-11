@@ -1,0 +1,182 @@
+<div id="rechercheProf" class="page" style="display: none">
+       
+     <!-- ************************* NAVBAR PROF ***************************** -->
+
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark collapse navbar-collapse" name="prof-navbar">
+        <a class="navbar-brand"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+            <ul class = "navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a name="confirmerMobiliteProfNav"class="nav-link" title="confirmerMobiliteProf">Confirmer Mobilité</a>
+                </li>
+                <li class = "nav-item">
+                    <a name="demandeMobiliteCsvNav" class="nav-link" title="demandeMobiliteCsv">Demandes de Mobilités</a>
+                </li>
+
+                <li class = "nav-item">
+                    <a name="etatDocumentsProfsNav" class="nav-link" title="etatDocumentsProfs">Etat des Documents Profs</a>
+                </li>
+
+                <li class = "nav-item">
+                    <a name="infosEtudiantsProfsNav" class="nav-link" title="infosEtudiantsProfs">Infos Etudiant (Prof)</a>
+                </li>
+
+                <li class="nav-item">
+                    <a name="infosPartenairesNav" class="nav-link" title="infosPartenaires">Infos Partenaires</a>
+                </li>
+                
+                <li class="nav-item">
+                  <a name="retourMobiliteNav"class="nav-link" title="retourMobilite">Retour Mobilité</a>
+                </li>
+           
+                <li class = "nav-item ">
+                    <a name="annulationProfesseurNav" class="nav-link" title="annulationProfesseur">Annulation mobilité(Prof)</a>
+                </li>
+                 <li class="nav-item">
+                    <a name="voirInscritsNav" class="nav-link" title="voirInscrits">Liste des utilisateurs</a>
+                </li>
+                 <li class="nav-item active">
+                    <a name="rechercheProfNav" class="nav-link" title="rechercheProf">Recherche</a>
+                </li>
+                <li>
+                     <a class="nav-item btn btn-primary" name="disco-button-prof">Déconnexion</a>
+                </li>
+                <li>
+                    <h4 style="color: aqua" name="bienvenue"> <span></span></h4>
+                </li>
+            </ul>
+        </nav>
+
+<!-- ************************* NAVBAR PROF ***************************** -->
+
+
+<div class="container">
+         <div class="row">
+         <div class="col-md-12">
+             <h2>Recherche</h2>
+            
+             <form id="form_partenaire" method="POST">
+                <h5>Rechercher un partenaire:</h5>
+        
+                <p> Nom :
+                     <input type="text" id="nom_partenaire">
+                 </p>
+                 <p> Pays :
+                         <input type="text" id="pays_partenaire">
+                 </p>
+                 <p> Ville :
+                         <input type="text" id="ville_partenaire">
+                 </p>
+                 <input type="button" value="Rechercher partenaire" id="recherche_partenaire">
+             </form>
+             <br/>
+             <form id="form_etudiant" method="POST">
+                     <h5>    Rechercher un étudiant:</h5>
+                     <p> Nom :
+                          <input type="text" id="nom_etudiant">
+                      </p>
+                      <p> Prénom :
+                              <input type="text" id="prenom_etudiant">
+                      </p>
+                      <input type="button" value="Rechercher étudiant" id="recherche_etudiant">
+             </form>
+             <br/>
+             <form id="form_mobilite" method="POST">
+                     <h5> Rechercher une mobilité:</h5>
+                     <p> Année académique :
+                         <input type="text" id="annee_mobilite">
+                     </p>
+                     <p> Etat de la mobilité :
+                         <select id="etat_mobilite" size="1">
+                             <option value="E">créée</option>
+                             <option value="EP">en préparation</option>
+                             <option value="AP">à payer</option>
+                             <option value="APS">à payer solde</option>
+                         </select> 	
+                     </p>
+                     <input type="button" value="Rechercher mobilité" id="recherche_mobilite">
+             </form>
+             <br/>
+             
+            <div class="alert" style="display:none" id="no_result">
+                     <span class="closebtn" onclick="this.parentElement.style.display='none';" >&times;</span>
+                      Pas de resultat 
+                   </div>
+                   
+                   <div class="alert" style="display:none" id="empty_input">
+                     <span class="closebtn" onclick="this.parentElement.style.display='none';" >&times;</span>
+                      Champs vide ! 
+                   </div>
+             
+             <table id="tab_partenaire">
+                 <thead>
+                     <th>Nom légal</th>
+                     <th>Nom affaire</th>
+                     <th>Nom complet</th>
+                     <th>Pays</th>
+                     <th>Région</th>
+                     <th>Ville</th>
+                     <th>Adresse</th>
+                     <th>Code Postal</th>
+                     <th>Code</th>
+                     <th>Type d'organisation</th>
+                     <th>Département</th>
+                     <th>Nb employés</th>
+                     <th>Email</th>
+                     <th>Site web</th>
+                     <th>Téléphone</th>
+                 </thead>
+                 <tbody id="resultat_partenaire">
+                     
+                 </tbody>
+             </table>
+             
+             <table id="tab_etudiant">
+                 <thead>
+                     <th>Nom</th>
+                     <th>Prénom</th>
+                     <th>Email</th>
+                     <th>Date de naissance</th>
+                     <th>Nationalité</th>
+                     <th>Adresse</th>
+                     <th>Code postal</th>
+                     <th>Sexe</th>
+                     <th>Statut</th>
+                     <th>Téléphone</th>
+                     <th>Département</th>
+                     <th>Nb années d'études</th>
+                     <th>Numéro compte bancaire</th>
+                     <th>Titulaire du compte</th>
+                     <th>Banque</th>
+                     <th>Code BIC</th>
+                 </thead>
+                 <tbody id="resultat_etudiant">
+                     
+                 </tbody>
+             </table>
+             
+             <table id="tab_mobilite">
+                 <thead>
+                     <th>Email étudiant</th>
+                     <th>Nom</th>
+                     <th>Prénom</th>
+                     <th>Nom partenaire</th>
+                     <th>Pays</th>
+                     <th>Type de mobilité</th>
+                     <th>Code</th>
+                     <th>N° ordre</th>
+                     <th>Année académique</th>
+                     <th>Quadrimestre</th>
+                     <th>Date d'introduction</th>
+                 </thead>
+                 <tbody id="resultat_mobilite">
+                     
+                 </tbody>
+             </table>
+
+     </div>
+     </div>
+   </div>
+   </div>
